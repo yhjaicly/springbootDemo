@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <header>
+        <meta charset="utf-8">
+    </header>
+    <body>
+         <form enctype='multipart/form-data' action="http://127.0.0.1:8080/upload" method="post">
+                <input id="up" type="file" name="pc1" required="required" onchange="isPhoto()">
+                <input type="submit">
+         </form >
+    </body>
+    <script>
+        function isPhoto() {
+            var img_id = document.getElementById('up').value; //根据id得到值
+            var index = img_id.indexOf("."); //（考虑严谨用lastIndexOf(".")得到）得到"."在第几位
+            img_id = img_id.substring(index); //截断"."之前的，得到后缀
+            if (img_id != ".bmp" && img_id != ".png" && img_id != ".PNG" && img_id != ".jpg" && img_id!=".JPG" && img_id != ".jpeg" && img_id != ".JPEG") {
+                alert("不是指定图片格式,重新选择");
+                document.getElementById('up').value = "";  // 不符合，就清除，重新选择
+            }
+        }
+    </script>
+</html>

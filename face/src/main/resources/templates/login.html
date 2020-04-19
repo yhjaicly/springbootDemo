@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <title>人脸登陆系统</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <style type="text/css">
+        #canvas, #video {
+            position: absolute;
+            left: 450px;
+            top: 100px;
+        }
+        #input {
+            position: absolute;
+            left: 400px;
+            top: 650px;
+        }
+
+        #snap {
+            position: absolute;
+            left: 950px;
+            top: 650px;
+        }
+
+        body {
+            background-image: url(images/bg.jpg);
+        }
+    </style>
+</head>
+<body>
+	<input id="input" type="button" title="开启摄像头" value="开启摄像头" onclick="getMedia()"/>
+	<video id="video" width="500px" height="500px" autoplay="autoplay"></video>
+	<canvas id="canvas" width="500px" height="500px"></canvas>
+	<input id="snap" type="button" title="拍照登陆" value="拍照登陆" onclick="takePhoto()"/>
+</body>
+	<script src="assets/js/login.js"></script>
+</html>
